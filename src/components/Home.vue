@@ -5,12 +5,17 @@
                 <div class="col">
                     <div class="list-group">
                         <router-link to="/swiper" class="list-group-item list-group-item-action">
-                            swiper
+                            Swiper
                             <i class="iconfont icon-arrow-right float-right"></i>
                         </router-link>
-                        <a href="##" class="list-group-item list-group-item-action">Second item</a>
-                        <a href="##" class="list-group-item list-group-item-action">Second item</a>
-                        <a href="##" class="list-group-item list-group-item-action">Second item</a>
+                        <router-link to="/copy" class="list-group-item list-group-item-action">
+                            Copy
+                            <i class="iconfont icon-arrow-right float-right"></i>
+                        </router-link>
+                        <router-link to="/fyb" class="list-group-item list-group-item-action">
+                            Fyb
+                            <i class="iconfont icon-arrow-right float-right"></i>
+                        </router-link>
                     </div>
                 </div>
             </div>
