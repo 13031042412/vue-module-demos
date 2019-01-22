@@ -22,9 +22,6 @@
                 </div>
             </div>
         </scroller>
-
-
-
     </div>
 </template>
 
@@ -400,6 +397,5 @@
     .rankType2 span{display: inline-block;padding: 10px 15px;background: #252644;}
     .rankType2 span+span{margin-left: 3px;}
     .rankType2 span.active{background: #ffde95;color: #252644;}
-
     .back{position:fixed;left:10px;top:10px;z-index:100;width:30px;height:30px;line-height:28px;text-align:center;}
 </style>

@@ -12,8 +12,8 @@ import '../node_modules/bootstrap/dist/js/bootstrap'
 // VueScroller
 import VueScroller from 'vue-scroller'
 
-
-
+// swiper
+import 'swiper/dist/css/swiper.min.css'
 
 
 Vue.config.productionTip = false
