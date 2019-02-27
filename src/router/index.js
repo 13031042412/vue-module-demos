@@ -6,6 +6,7 @@ import Home from '@/components/Home'
 import Fyb from '@/components/fyb/fyb'
 import Copy from '@/components/copy/copy'
 import Swiper from '@/components/swiper/swiper'
+import Moment from '@/components/moment/Moment'
 
 
 Vue.use(Router);
@@ -31,6 +32,11 @@ export default new Router({
             path: '/swiper',
             name: 'Swiper',
             component: Swiper
+        },
+        {
+            path: '/moment',
+            name: 'Moment',
+            component: Moment
         },
 
 

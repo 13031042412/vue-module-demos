@@ -1,63 +1,35 @@
 <template>
     <div class="hello">
-        <h4 class="text-center">{{ msg }}</h4>
-        <div>
-            <button class="btn btn-primary">btn1</button>
+        <h4 class="text-center py-2 border-bottom">{{ msg }}</h4>
+        <div class="test-content">
+
+
+
         </div>
-
-        <select name="" id="">
-            <option value="000">000</option>
-            <option value="001">001</option>
-            <option value="002">002</option>
-            <option value="003">003</option>
-            <option value="004">004</option>
-            <option value="005">005</option>
-            <option value="006">006</option>
-            <option value="007">007</option>
-            <option value="008">008</option>
-            <option value="009">009</option>
-            <option value="010">010</option>
-            <option value="011">011</option>
-            <option value="012">012</option>
-            <option value="013">013</option>
-            <option value="014">014</option>
-            <option value="015">015</option>
-            <option value="016">016</option>
-            <option value="017">017</option>
-            <option value="018">018</option>
-            <option value="019">019</option>
-            <option value="020">020</option>
-            <option value="021">021</option>
-            <option value="022">022</option>
-            <option value="023">023</option>
-            <option value="024">024</option>
-            <option value="025">025</option>
-            <option value="026">026</option>
-            <option value="027">027</option>
-            <option selected value="028">028</option>
-            <option value="029">029</option>
-            <option value="030">030</option>
-            <option value="031">031</option>
-            <option value="032">032</option>
-            <option value="033">033</option>
-            <option value="034">034</option>
-            <option value="035">035</option>
-            <option value="036">036</option>
-            <option value="037">037</option>
-            <option value="038">038</option>
-            <option value="039">039</option>
-        </select>
-
     </div>
 </template>
 
 <script>
+    import moment from 'moment/moment'
     export default {
         name: 'HelloWorld',
         data () {
             return {
                 msg: '测试页'
             }
+        },
+        created(){},
+        mounted(){
+            let now = moment();  // 当前时间
+            console.log('当前时间: ', now);
+
+            var day = moment("12-25-1995", "YYYY-MM-DD");
+            console.log(moment("12-25-1995").isValid())
+
+
+
+
+
         }
     }
 </script>
