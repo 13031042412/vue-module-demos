@@ -20,6 +20,10 @@
                             Moment
                             <i class="iconfont icon-arrow-right float-right"></i>
                         </router-link>
+                        <router-link to="/lang" class="list-group-item list-group-item-action">
+                            多语言
+                            <i class="iconfont icon-arrow-right float-right"></i>
+                        </router-link>
                     </div>
                 </div>
             </div>

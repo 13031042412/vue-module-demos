@@ -9,14 +9,14 @@
             </div>
 
             <!--如果需要分页器-->
-            <div class="swiper-pagination"></div>
+            <!--<div class="swiper-pagination"></div>-->
 
             <!--如果需要导航按钮-->
             <!--<div class="swiper-button-prev"></div>-->
             <!--<div class="swiper-button-next"></div>-->
 
             <!--如果需要滚动条-->
-            <!--<div class="swiper-scrollbar"></div>-->
+            <div class="swiper-scrollbar"></div>
         </div>
     </div>
 </template>
@@ -28,19 +28,17 @@
         data(){
             return {
                 pics: [
-                    '/static/img/idcard/id_alusi.jpg',
-                    '/static/img/idcard/id_beiliya.jpg',
-                    '/static/img/idcard/id_dijia.jpg',
-                    '/static/img/idcard/id_gaosi.jpg',
-                    '/static/img/idcard/id_nuoya.jpg',
-                    '/static/img/idcard/id_sailuo.jpg',
-                    '/static/img/idcard/id_zuofei.jpg'
+                    '/static/img/pic1/pic001.jpg',
+                    '/static/img/pic1/pic002.jpg',
+                    '/static/img/pic1/pic003.jpg',
+                    '/static/img/pic1/pic004.jpg',
+                    '/static/img/pic1/pic005.jpg'
                 ]
             }
         },
         mounted(){
             let mySwiper = new Swiper('.swiper-container',{
-                // loop: true,
+                loop: true,
                 // direction: 'vertical',
 
                 autoplay: {
@@ -51,15 +49,10 @@
 
 
 
-
-
-
-
-
                 // 如果需要分页器
-                pagination: {
-                    el: '.swiper-pagination'
-                },
+                // pagination: {
+                //     el: '.swiper-pagination'
+                // },
 
                 // 如果需要前进后退按钮
                 // navigation: {
@@ -68,13 +61,16 @@
                 // },
 
                 // 如果需要滚动条
-                // scrollbar: {
-                //     el: '.swiper-scrollbar',
-                // },
+                scrollbar: {
+                    el: '.swiper-scrollbar'
+                },
 
 
 
             });
+            mySwiper.scrollbar.$el.css({'width': '50px','left': '50%','marginLeft': '-25px', 'bottom': '20px'});
+            mySwiper.scrollbar.$dragEl.css({'background': '#fff'});
+            mySwiper.scrollbar.updateSize();
 
         }
     }
@@ -82,4 +78,14 @@
 
 <style scoped>
 .swiper-container{min-height:100px;}
+.swiper-slide{
+    width: 90%!important;
+    margin: 0 5%;
+}
+.swiper-slide-prev{
+    right:-8%;
+}
+.swiper-slide-next {
+    left: -8%;
+}
 </style>
