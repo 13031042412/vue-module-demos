@@ -1,12 +1,12 @@
-# vue1
+# vue 各种组件使用测试
 
-> A Vue.js project
+> 用过的组件
 
 ## Build Setup
 
 ``` bash
-# install dependencies
-npm install
+# module-vuedraggable
+拖拽排序组件
 
 # serve with hot reload at localhost:8080
 npm run dev
