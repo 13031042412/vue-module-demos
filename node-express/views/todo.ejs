@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo app</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form>
+                    <div class="input-group mb-3">
+                        <input id="addTodo" type="text" name="item" class="form-control"
+                            placeholder="something to do...">
+                        <div class="input-group-append">
+                            <button id="btnAddTodo" class="btn btn-primary" type="submit">Add</button>
+                        </div>
+                    </div>
+                </form>
+
+
+                <ul id="todo" class="list-group">
+                    <% todos.forEach(function(todo){ %>
+                    <li class="list-group-item d-flex justify-content-between"><%= todo.item %>
+                        <div>
+                            <span class="badge rounded-circle badge-success cursor-pointer">
+                                <i class="fa fa-check"></i>
+                            </span>
+                            <span class="badge rounded-circle badge-secondary cursor-pointer btn-del">
+                                <i class="fa fa-trash-alt"></i>
+                            </span>
+                        </div>
+                    </li>
+                    <% }) %>
+                </ul>
+
+                <div class="text-center">
+                    <hr class="w-25">
+                </div>
+
+                <ul id="completed" class="list-group">
+                    <!-- <li class="list-group-item d-flex justify-content-between">大扫除
+                        <div>
+                            <span class="badge rounded-circle badge-success cursor-pointer">
+                                <i class="fa fa-check"></i>
+                            </span>
+                            <span class="badge rounded-circle badge-secondary cursor-pointer">
+                                <i class="fa fa-trash-alt"></i>
+                            </span>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $('#btnAddTodo').click(function (e) {
+                e.preventDefault();
+                var item = $.trim($('#addTodo').val());
+                if (item != '') {
+                    $.ajax({
+                        type: 'post',
+                        url: '/todo',
+                        data: { item: item },
+                        success: function (res) {
+                            // console.log(res)
+                            location.reload();
+                        }
+                    })
+                }
+            });
+
+            // 删除
+            $('.btn-del').on('click', function () {
+                var _parent = $(this).parents('.list-group-item').first();
+                var item = $.trim(_parent.text());
+                $.ajax({
+                    type: 'delete',
+                    url: '/todo/' + item,
+                    data: { item: item },
+                    success: function (res) {
+                        // console.log(res)
+                        location.reload();
+                    }
+                })
+            })
+
+
+
+        })
+    </script>
+</body>
+
+</html>
